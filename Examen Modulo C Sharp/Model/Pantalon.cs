@@ -16,7 +16,7 @@ namespace Examen_Modulo_C_Sharp.Model
             this.tipo = tipo;
         }
 
-        public Tipo Tipo { get => tipo; set => tipo = value; }
+        public Tipo Tipo { get => tipo; }
 
         public override double ObtenerPrecioFinal()
         {

@@ -23,9 +23,9 @@ namespace Examen_Modulo_C_Sharp.Model
             generadorID = 0;
         }
 
-        public string Nombre { get => nombre; set => nombre = value; }
-        public string Apellido { get => apellido; set => apellido = value; }
-        public int IdVendedor { get => idVendedor; set => idVendedor = value; }
+        public string Nombre { get => nombre; }
+        public string Apellido { get => apellido;  }
+        public int IdVendedor { get => idVendedor;  }
         public List<Cotizacion> Cotizaciones { get => cotizaciones; }
 
         public void AgregarTienda(Tienda tienda)

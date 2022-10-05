@@ -21,9 +21,8 @@ namespace Examen_Modulo_C_Sharp.Model
             this.prendas = prendas;
         }
 
-        public string Nombre { get => nombre; set => nombre = value; }
-        public string Direccion { get => direccion; set => direccion = value; }
-        public Vendedor Vendedor { get => vendedor; set => vendedor = value; }
+        public string Nombre { get => nombre;  }
+        public string Direccion { get => direccion; }
 
         public Prenda BuscarCamisa(Manga manga, Cuello cuello, Calidad calidad)
         {

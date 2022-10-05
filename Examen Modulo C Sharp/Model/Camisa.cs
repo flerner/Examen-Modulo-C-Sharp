@@ -13,8 +13,8 @@ namespace Examen_Modulo_C_Sharp.Model
         const int DESCUENTO_MANGA_CORTA = 10;
         const int AUMENTO_MAO = 3;
 
-        internal Manga Manga { get => manga; set => manga = value; }
-        internal Cuello Cuello { get => cuello; set => cuello = value; }
+        public Manga Manga { get => manga; }
+        public Cuello Cuello { get => cuello; }
 
         public Camisa(int stock, Calidad calidad, Manga manga, Cuello cuello) : base(stock, calidad)
         {

@@ -12,7 +12,7 @@ namespace Examen_Modulo_C_Sharp.Model
         protected int stock;
         protected Calidad calidad;
 
-        public Calidad Calidad { get => calidad; set => calidad = value; }
+        public Calidad Calidad { get => calidad;  }
         public double PrecioUnitario { set => precioUnitario = value; }
         public int Stock { get => stock; }
         public string ToString()
