@@ -63,7 +63,7 @@ namespace Examen_Modulo_C_Sharp.Presenter
             if (VerificarInputCantidad(prenda))
             {
                 prenda.PrecioUnitario = icotizador.GetInputPrecioUnitario();
-                double total = vendedor.Cotizar(icotizador.GetInputPrecioUnitario(), icotizador.GetInputCantidad(), prenda);
+                double total = vendedor.Cotizar(icotizador.GetInputCantidad(), prenda);
                 icotizador.PrecioTotal(total.ToString());
             }
             else

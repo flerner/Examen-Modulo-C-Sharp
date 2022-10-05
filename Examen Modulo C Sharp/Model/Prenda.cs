@@ -17,12 +17,9 @@ namespace Examen_Modulo_C_Sharp.Model
         public int Stock { get => stock; }
         public string ToString()
         {
-            return this.GetType().Name + ": Precio: " + precioUnitario + " Stock: " + stock + " Calidad: " + calidad + "\n";
+            return this.GetType().Name + ": Precio: $" + precioUnitario + " Stock: " + stock + " Calidad: " + calidad + "\n";
         }
 
-        /* public int Stock { get => stock;}
-         public Calidad Calidad { get => calidad;  }
-         public double PrecioUnitario { get => precioUnitario; set => precioUnitario = value; }*/
 
         public Prenda(int stock, Calidad calidad)
         {

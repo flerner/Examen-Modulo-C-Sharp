@@ -35,7 +35,7 @@ namespace Examen_Modulo_C_Sharp.Model
                 this.tienda = tienda;
             }
         }
-        public double Cotizar(int precioUnitario, int cantidad, Prenda prenda)
+        public double Cotizar(int cantidad, Prenda prenda)
         {
             Cotizacion cotizacion = new Cotizacion(generadorID, DateTime.UtcNow, this.idVendedor, cantidad, prenda);
             cotizacion.Cotizar();
