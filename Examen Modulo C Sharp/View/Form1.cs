@@ -105,6 +105,7 @@ namespace Examen_Modulo_C_Sharp
                 cboxCuelloMao.Enabled = true;
                 cboxMangaCorta.Enabled = true;
             }
+            presenter.ActualizarStockView();
         }
 
         private void rbtnPantalon_CheckedChanged(object sender, EventArgs e)
@@ -115,56 +116,60 @@ namespace Examen_Modulo_C_Sharp
                 cboxCuelloMao.Enabled = false;
                 cboxMangaCorta.Enabled = false;
             }
+            presenter.ActualizarStockView();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (ValidarIngresoInvalido())
+            if (ValidarIngreso())
             {
-                
-                    presenter.Cotizar();
-                
+
+                presenter.Cotizar();
+
             }
-            else
-            {
-                MessageBox.Show("Ingresaste mal algun dato");
-            }
+
 
         }
 
-        private Boolean ValidarIngresoInvalido()
+        private Boolean ValidarIngreso()
         {
-            Boolean esValido = true;
-            int precio;
-            int cantidad;
-            try
-            {
-                precio = int.Parse(txtPrecio.Text);
-                cantidad = int.Parse(txtCantidad.Text);
-            }
-            catch (FormatException e)
+            Boolean esValido = true;        
+
+            if (!rbtnPantalon.Checked && !rbtnCamisa.Checked)
             {
                 esValido = false;
-                return esValido;
+                MessageBox.Show("Ingrese un tipo de prenda...");
             }
-            esValido = precio > 0 && cantidad > 0;
-
             if (esValido)
             {
-
-                if (!rbtnPantalon.Checked && !rbtnCamisa.Checked)
+                if (!rbtnStandard.Checked && !rbtnPremium.Checked)
                 {
                     esValido = false;
+                    MessageBox.Show("Ingrese una calidad...");
                 }
-                if (esValido)
-                {
-                    if(!rbtnStandard.Checked && !rbtnPremium.Checked)
-                    {
-                        esValido = false;
-                    }
-                }               
             }
+            //valido entradas de texto formato correcto mayor a 0
+            if (Utiles.Validar(txtCantidad.Text, "int") && int.Parse(txtCantidad.Text) > 0)
+            {
+                txtCantidad.BackColor = System.Drawing.Color.White;
+            }
+            else
+            {
+                esValido = false;
+                txtCantidad.BackColor = System.Drawing.Color.Red;
+            }
+            if (Utiles.Validar(txtPrecio.Text, "int") && int.Parse(txtPrecio.Text) > 0)
+            {
+                txtPrecio.BackColor = System.Drawing.Color.White;
+            }
+            else
+            {
+                esValido = false;
+                txtPrecio.BackColor = System.Drawing.Color.Red;
+            }
+
+
             return esValido;
         }
 
@@ -172,5 +177,34 @@ namespace Examen_Modulo_C_Sharp
         {
             presenter.MostrarHistorial();
         }
+
+        //actualizo lbl de stock cada vez que cambia algo
+        #region
+        private void cboxMangaCorta_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnCamisa.Checked)
+            {
+                presenter.ActualizarStockView();
+            }
+        }
+
+        private void cboxCuelloMao_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnCamisa.Checked)
+            {
+                presenter.ActualizarStockView();
+            }
+        }
+
+        private void cboxChupin_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnPantalon.Checked)
+            {
+                presenter.ActualizarStockView();
+            }
+        }
+
+
+        #endregion
     }
 }

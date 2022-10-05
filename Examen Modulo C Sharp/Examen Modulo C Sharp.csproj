@@ -58,6 +58,7 @@
     <Compile Include="Model\Vendedor.cs" />
     <Compile Include="Presenter\CotizadorPresenter.cs" />
     <Compile Include="Presenter\ICotizador.cs" />
+    <Compile Include="Utiles.cs" />
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
     </Compile>

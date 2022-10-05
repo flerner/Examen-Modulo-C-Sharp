@@ -17,7 +17,7 @@ namespace Examen_Modulo_C_Sharp.Model
         public int Stock { get => stock; }
         public string ToString()
         {
-            return "Precio: " + precioUnitario + " Stock: " + stock + " Calidad " + calidad;
+            return this.GetType().Name + ": Precio: " + precioUnitario + " Stock: " + stock + " Calidad: " + calidad + "\n";
         }
 
         /* public int Stock { get => stock;}
@@ -37,6 +37,10 @@ namespace Examen_Modulo_C_Sharp.Model
                 
             }
             return precio;
+        }
+        public Boolean VerificarStockDisponible(int cantidad)
+        {
+            return this.stock >= cantidad;
         }
         public abstract double ObtenerPrecioFinal();
         

@@ -34,7 +34,7 @@ namespace Examen_Modulo_C_Sharp.Model
 
        public string ToString()
         {
-            return "Id: " + id + " Fecha y hora " + fechaYHora + " Prenda Cotizada" + prendaCotizada.ToString() + " Id Vendedor: " + idVendedor + " cantidad de unidades " + cantUnidades + " Total: " + resultado;
+            return "Id de la cotizacion: " + id + ". Fecha y hora: " + fechaYHora + "\nPrenda Cotizada: " + prendaCotizada.ToString() + "Id Vendedor: " + idVendedor + " cantidad de unidades " + cantUnidades + " Total: $" + resultado + " \n\n";
         }
 
     }

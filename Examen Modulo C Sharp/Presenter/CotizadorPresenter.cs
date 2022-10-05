@@ -45,23 +45,43 @@ namespace Examen_Modulo_C_Sharp.Presenter
             prendas.Add(new Model.Pantalon(750, Model.Calidad.STANDARD, Model.Tipo.CHUPIN));
             prendas.Add(new Model.Pantalon(750, Model.Calidad.PREMIUM, Model.Tipo.CHUPIN));
             //comunes
-            prendas.Add(new Model.Pantalon(750, Model.Calidad.PREMIUM, Model.Tipo.COMUN));
-            prendas.Add(new Model.Pantalon(750, Model.Calidad.STANDARD, Model.Tipo.COMUN));
+            prendas.Add(new Model.Pantalon(250, Model.Calidad.PREMIUM, Model.Tipo.COMUN));
+            prendas.Add(new Model.Pantalon(250, Model.Calidad.STANDARD, Model.Tipo.COMUN));
 
 
             this.tienda = new Model.Tienda("Armando Lio", "Cabildo 100", vendedor, prendas);
             vendedor.AgregarTienda(tienda);
         }
-        public Boolean VerificarDatos(Model.Prenda prenda)
+        public Boolean VerificarInputCantidad(Model.Prenda prenda)
         {
-            return icotizador.GetInputCantidad() <= prenda.Stock;
+           return prenda.VerificarStockDisponible(icotizador.GetInputCantidad());
         }
         public void Cotizar()
         {
+            Model.Prenda prenda = BuscarPrenda();
+          
+            if (VerificarInputCantidad(prenda))
+            {
+                prenda.PrecioUnitario = icotizador.GetInputPrecioUnitario();
+                double total = vendedor.Cotizar(icotizador.GetInputPrecioUnitario(), icotizador.GetInputCantidad(), prenda);
+                icotizador.PrecioTotal(total.ToString());
+            }
+            else
+            {
+                icotizador.MensajeErrorStock(MENSAJE_ERROR + prenda.Stock.ToString());
+            }
+        }
+        public void ActualizarStockView()
+        {
+            Model.Prenda prenda = BuscarPrenda();
+            icotizador.StockDisponible(prenda.Stock.ToString());
+        }
+
+        //devuelve referencia a la instancia actual de la prenda
+        private Model.Prenda BuscarPrenda()
+        {
             Model.Prenda prenda = null;
-            Model.Calidad calidad;
-            //aca trackeo las casillas que estaban marcadas para poder ubicar al producto correcto y seguidamente
-            //lo busco y guardo en la variable prenda
+            Model.Calidad calidad;         
             if (icotizador.GetInputPremium())
             {
                 calidad = Model.Calidad.PREMIUM;
@@ -93,18 +113,7 @@ namespace Examen_Modulo_C_Sharp.Presenter
                 else tipo = Model.Tipo.COMUN;
                 prenda = tienda.BuscarPantalon(tipo, calidad);
             }
-            icotizador.StockDisponible(prenda.Stock.ToString());
-            if (VerificarDatos(prenda))
-            {
-                prenda.PrecioUnitario = icotizador.GetInputPrecioUnitario();
-                double total = vendedor.Cotizar(icotizador.GetInputPrecioUnitario(), icotizador.GetInputCantidad(), prenda);
-                icotizador.PrecioTotal(total.ToString());
-            }
-            else
-            {
-                icotizador.MensajeErrorStock(MENSAJE_ERROR + prenda.Stock.ToString());
-                icotizador.StockDisponible(prenda.Stock.ToString());
-            }
+            return prenda;
         }
         public void MostrarHistorial()
         {

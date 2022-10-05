@@ -141,6 +141,7 @@
             this.cboxChupin.TabIndex = 2;
             this.cboxChupin.Text = "Chupín";
             this.cboxChupin.UseVisualStyleBackColor = true;
+            this.cboxChupin.CheckedChanged += new System.EventHandler(this.cboxChupin_CheckedChanged);
             // 
             // cboxCuelloMao
             // 
@@ -151,6 +152,7 @@
             this.cboxCuelloMao.TabIndex = 1;
             this.cboxCuelloMao.Text = "Cuello mao";
             this.cboxCuelloMao.UseVisualStyleBackColor = true;
+            this.cboxCuelloMao.CheckedChanged += new System.EventHandler(this.cboxCuelloMao_CheckedChanged);
             // 
             // cboxMangaCorta
             // 
@@ -161,6 +163,7 @@
             this.cboxMangaCorta.TabIndex = 0;
             this.cboxMangaCorta.Text = "Manga corta";
             this.cboxMangaCorta.UseVisualStyleBackColor = true;
+            this.cboxMangaCorta.CheckedChanged += new System.EventHandler(this.cboxMangaCorta_CheckedChanged);
             // 
             // label1
             // 
