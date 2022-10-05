@@ -1,0 +1,11 @@
+D:\Program Files (x86)\Microsoft Visual Studio\Ejercicio De Examen Quark\Examen Modulo C Sharp\Examen Modulo C Sharp\bin\Debug\Examen Modulo C Sharp.exe.config
+D:\Program Files (x86)\Microsoft Visual Studio\Ejercicio De Examen Quark\Examen Modulo C Sharp\Examen Modulo C Sharp\bin\Debug\Examen Modulo C Sharp.exe
+D:\Program Files (x86)\Microsoft Visual Studio\Ejercicio De Examen Quark\Examen Modulo C Sharp\Examen Modulo C Sharp\bin\Debug\Examen Modulo C Sharp.pdb
+D:\Program Files (x86)\Microsoft Visual Studio\Ejercicio De Examen Quark\Examen Modulo C Sharp\Examen Modulo C Sharp\obj\Debug\Examen Modulo C Sharp.csproj.AssemblyReference.cache
+D:\Program Files (x86)\Microsoft Visual Studio\Ejercicio De Examen Quark\Examen Modulo C Sharp\Examen Modulo C Sharp\obj\Debug\Examen Modulo C Sharp.csproj.SuggestedBindingRedirects.cache
+D:\Program Files (x86)\Microsoft Visual Studio\Ejercicio De Examen Quark\Examen Modulo C Sharp\Examen Modulo C Sharp\obj\Debug\Examen_Modulo_C_Sharp.Properties.Resources.resources
+D:\Program Files (x86)\Microsoft Visual Studio\Ejercicio De Examen Quark\Examen Modulo C Sharp\Examen Modulo C Sharp\obj\Debug\Examen_Modulo_C_Sharp.Form1.resources
+D:\Program Files (x86)\Microsoft Visual Studio\Ejercicio De Examen Quark\Examen Modulo C Sharp\Examen Modulo C Sharp\obj\Debug\Examen Modulo C Sharp.csproj.GenerateResource.cache
+D:\Program Files (x86)\Microsoft Visual Studio\Ejercicio De Examen Quark\Examen Modulo C Sharp\Examen Modulo C Sharp\obj\Debug\Examen Modulo C Sharp.csproj.CoreCompileInputs.cache
+D:\Program Files (x86)\Microsoft Visual Studio\Ejercicio De Examen Quark\Examen Modulo C Sharp\Examen Modulo C Sharp\obj\Debug\Examen Modulo C Sharp.exe
+D:\Program Files (x86)\Microsoft Visual Studio\Ejercicio De Examen Quark\Examen Modulo C Sharp\Examen Modulo C Sharp\obj\Debug\Examen Modulo C Sharp.pdb
